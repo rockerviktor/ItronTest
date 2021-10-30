@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Itron.Data;
 using Microsoft.AspNetCore.Authorization;
@@ -31,6 +30,20 @@ namespace Itron.Controllers
                 Summary = databaseForecast.Summary,
                 TemperatureC = databaseForecast.TemperatureC
             });
+        }
+
+
+        [HttpPost]
+        public void Post(WeatherForecast forecast)
+        {
+            this.databaseContext.WeatherForecasts.Add(new Models.WeatherForecast
+            {
+                Date = forecast.Date,
+                Summary = forecast.Summary,
+                TemperatureC = forecast.TemperatureC
+            });
+
+            this.databaseContext.SaveChanges();
         }
     }
 }

@@ -1,0 +1,6 @@
+<h1>Upload weather forecast data</h1>
+<p>Format: <code>date;recorded temperature in Celsius;short textual summary</code></p>
+<p>Example: <code>2021-10-15 14:12:17;11;Chilly</code></p>
+<p aria-live="polite">Forecasts uploaded: <strong>{{ uploadedCount }}</strong></p>
+<input type="file" accept="text/csv" (change)="onFileSelected($event)" />
+<button class="btn btn-primary" (click)="uploadData()">Upload</button>
