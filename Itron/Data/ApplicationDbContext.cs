@@ -17,5 +17,7 @@ namespace Itron.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+
+        public DbSet<Models.WeatherForecast> WeatherForecasts { get; set; }
     }
 }
